@@ -1,0 +1,309 @@
+peripheral.find("modem", rednet.open)
+turtle.select(1)
+os.setComputerLabel("GPT")
+local hostid = 14
+local slot1a, slot1b, slot2a, slot2b, slot3a, slot3b, slot4a, slot4b, slot5a, slot5b, slot6a, slot6b, slot7a, slot7b, slot8a, slot8b, slot9a, slot9b, slot10a, slot10b, slot11a, slot11b, slot12a, slot12b, slot13a, slot13b, slot14a, slot14b, slot15a, slot15b, slot16a, slot16b
+
+
+local function shortdetector()
+  local top1, top2 = turtle.inspectUp()
+  local front1, front2 = turtle.inspect()
+  local bottom1, bottom2 = turtle.inspectDown()
+  if top1 then
+    rednet.send(hostid, top2.name)
+  else
+    rednet.send(hostid, "No block on top")
+  end
+  if front1 then
+    rednet.send(hostid, front2.name)
+  else
+    rednet.send(hostid, "No block in front")
+  end
+  if bottom1 then
+    rednet.send(hostid, bottom2.name)
+  else
+    rednet.send(hostid, "No block on bottom")
+  end
+end
+
+local function inventory()
+  local slot1 = turtle.getItemDetail(1, true)
+  if slot1 then
+      local slot1a = slot1.name
+      local slot1b = slot1.count
+    if turtle.getSelectedSlot() == 1 then
+      rednet.send(hostid, "->" .. slot1b .. slot1a)
+    elseif slot1 then
+      rednet.send(hostid, slot1b .. slot1a)
+  end
+  end
+
+  local slot2 = turtle.getItemDetail(2, true)
+  if slot2 then
+      local slot2a = slot2.name
+      local slot2b = slot2.count
+    if turtle.getSelectedSlot() == 2 then
+      rednet.send(hostid, "->" .. slot2b .. slot2a)
+    elseif slot2 then
+      rednet.send(hostid, slot2b .. slot2a)
+  end
+  end
+
+  local slot3 = turtle.getItemDetail(3, true)
+  if slot3 then
+      local slot3a = slot3.name
+      local slot3b = slot3.count
+    if turtle.getSelectedSlot() == 3 then
+      rednet.send(hostid, "->" .. slot3b .. slot3a)
+    elseif slot3 then
+    rednet.send(hostid, slot3b .. slot3a)
+  end
+  end
+
+  local slot4 = turtle.getItemDetail(4, true)
+  if slot4 then
+      local slot4a = slot4.name
+      local slot4b = slot4.count
+    if turtle.getSelectedSlot() == 4 then
+      rednet.send(hostid, "->" .. slot4b .. slot4a)
+    elseif slot4 then
+      rednet.send(hostid, slot4b .. slot4a)
+  end
+  end
+
+  local slot5 = turtle.getItemDetail(5, true)
+  if slot5 then
+      local slot5a = slot5.name
+      local slot5b = slot5.count
+    if turtle.getSelectedSlot() == 5 then
+      rednet.send(hostid, "->" .. slot5b .. slot5a)
+    elseif slot5 then
+      rednet.send(hostid, slot5b .. slot5a)
+  end
+  end
+
+  local slot6 = turtle.getItemDetail(6, true)
+    if slot6 then
+      local slot6a = slot6.name
+      local slot6b = slot6.count
+    if turtle.getSelectedSlot() == 6 then
+      rednet.send(hostid, "->" .. slot6b .. slot6a)
+    elseif slot6 then
+      rednet.send(hostid, slot6b .. slot6a)
+  end
+  end
+
+  local slot7 = turtle.getItemDetail(7, true)
+  if slot7 then
+      local slot7a = slot7.name
+      local slot7b = slot7.count
+    if turtle.getSelectedSlot() == 7 then
+      rednet.send(hostid, "->" .. slot7b .. slot7a)
+    elseif slot7 then
+      rednet.send(hostid, slot7b .. slot7a)
+  end
+  end
+
+  local slot8 = turtle.getItemDetail(8, true)
+  if slot8 then
+    local slot8a = slot8.name
+    local slot8b = slot8.count
+  if turtle.getSelectedSlot() == 8 then
+    rednet.send(hostid, "->" .. slot8b .. slot8a)
+  elseif slot8 then
+    rednet.send(hostid, slot8b .. slot8a)
+  end
+  end
+
+  local slot9 = turtle.getItemDetail(9, true)
+  if slot9 then
+    local slot9a = slot9.name
+    local slot9b = slot9.count
+  if turtle.getSelectedSlot() == 9 then
+    rednet.send(hostid, "->" .. slot9b .. slot9a)
+  elseif slot9 then
+    rednet.send(hostid, slot9b .. slot9a)
+  end
+  end
+
+  local slot10 = turtle.getItemDetail(10, true)
+  if slot10 then
+    local slot10a = slot10.name
+    local slot10b = slot10.count
+  if turtle.getSelectedSlot() == 10 then
+    rednet.send(hostid, "->" .. slot10b .. slot10a)
+  elseif slot10 then
+    rednet.send(hostid, slot10b .. slot10a)
+  end
+end
+
+  local slot11 = turtle.getItemDetail(11, true)
+  if slot11 then
+    local slot11a = slot11.name
+    local slot11b = slot11.count
+  if turtle.getSelectedSlot() == 11 then
+    rednet.send(hostid, "->" .. slot11b .. slot11a)
+  elseif slot11 then
+    rednet.send(hostid, slot11b .. slot11a)
+  end
+end
+
+  local slot12 = turtle.getItemDetail(12, true)
+  if slot12 then
+    local slot12a = slot12.name
+    local slot12b = slot12.count
+  if turtle.getSelectedSlot() == 12 then
+    rednet.send(hostid, "->" .. slot12b .. slot12a)
+  elseif slot12 then
+    rednet.send(hostid, slot12b .. slot12a)
+  end
+end
+
+  local slot13 = turtle.getItemDetail(13, true)
+  if slot13 then
+    local slot13a = slot13.name
+    local slot13b = slot13.count
+  if turtle.getSelectedSlot() == 12 then
+    rednet.send(hostid, "->" .. slot13b .. slot13a)
+  elseif slot13 then
+    rednet.send(hostid, slot13b .. slot13a)
+  end
+end
+
+  local slot14 = turtle.getItemDetail(14, true)
+  if slot14 then
+    local slot14a = slot14.name
+    local slot14b = slot14.count
+  if turtle.getSelectedSlot() == 14 then
+    rednet.send(hostid, "->" .. slot14b .. slot14a)
+  elseif slot14 then
+    rednet.send(hostid, slot14b .. slot14a)
+  end
+end
+
+  local slot15 = turtle.getItemDetail(15, true)
+  if slot15 then
+    local slot15a = slot15.name
+    local slot15b = slot15.count
+    if turtle.getSelectedSlot() == 15 then
+      rednet.send(hostid, "->" .. slot15b .. slot15a)
+  elseif slot15 then
+    rednet.send(hostid, slot15b .. slot15a)
+  end
+end
+
+  local slot16 = turtle.getItemDetail(16, true)
+  if slot16 then
+    local slot16a = slot16.name
+    local slot16b = slot16.count
+    if turtle.getSelectedSlot() == 16 then
+      rednet.send(hostid, "->" .. slot16b .. slot16a)
+  elseif slot16 then
+    rednet.send(hostid, slot16b .. slot16a)
+  end
+end
+end
+
+local function keybinds()
+    local senderId, message, protocol = rednet.receive()
+    
+    if message == "d" then
+      print("Received 'd' from sender " .. senderId)
+      turtle.turnRight()
+    end
+    
+    if message == "a" then
+      print("Received 'a' from sender " .. senderId)
+      turtle.turnLeft()
+    end
+    
+    if message == "r" then
+      print("Received 'r' from sender " .. senderId)
+      turtle.refuel()
+    end
+    
+    if message == "w" then
+      print("Received 'w' from sender " .. senderId)
+      turtle.forward()
+    end
+    
+    if message == "s" then
+      print("Received 's' from sender " .. senderId)
+      turtle.back()
+    end
+    
+    if message == "v" then
+      print("Received 'v' from sender " .. senderId)
+      turtle.up()
+    end
+    
+    if message == "c" then
+      print("Received 'c' from sender " .. senderId)
+      turtle.down()
+    end
+    
+    if message == "numPad5" then
+      print("Received 'numPad5' from sender " .. senderId)
+      turtle.dig()
+    end
+    
+    if message == "numPad2" then
+      print("Received 'numPad2' from sender " .. senderId)
+      turtle.digDown()
+    end
+    
+    if message == "numPad8" then
+      print("Received 'numPad8' from sender " .. senderId)
+      turtle.digUp()
+    end
+    
+    if message == "z" then
+      print("Received 'z' from sender " .. senderId)
+      turtle.equipLeft()
+    end
+    
+    if message == "numPad4" then
+      print("Received 'numPad4' from sender " .. senderId)
+      turtle.place()
+    end
+    
+    if message == "numPad7" then
+      print("Received 'numPad7' from sender " .. senderId)
+      turtle.placeUp()
+    end
+    
+    if message == "numPad1" then
+      print("Received 'numPad1' from sender " .. senderId)
+      turtle.placeDown()
+    end
+    
+    if message == "b" then
+      print("Received 'b' from sender " .. senderId)
+      local selectedslot = turtle.getSelectedSlot()
+      if selectedslot ~= 16 then
+        turtle.select(selectedslot + 1)
+        local selectedslot = turtle.getSelectedSlot()
+      end
+    end
+    
+    if message == "n" then
+      print("Received 'n' from sender " .. senderId)
+      local selectedslot = turtle.getSelectedSlot()
+      if selectedslot ~= 1 then
+        turtle.select(selectedslot - 1)
+        local selectedslot = turtle.getSelectedSlot()
+      end
+    end
+
+    if #message > 1 and not string.match(message, "numPad") then
+      print("Received " .. message .. " from sender " .. senderId)
+      local code = message
+      local fn = assert(load(code))
+      fn()
+    end
+
+end
+
+while true do
+  parallel.waitForAll(inventory, shortdetector, keybinds)
+end
