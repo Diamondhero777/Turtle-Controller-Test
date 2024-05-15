@@ -1,0 +1,26 @@
+peripheral.find("modem", rednet.open)
+local debug = false
+local tutel = 15
+local command = ""
+term.clear()
+os.setComputerLabel("Console")
+
+local function controls()
+  local event, key = os.pullEvent("key")
+  
+  if key then
+    local keyName = keys.getName(key)
+    if keyName == keys.backspace then
+      command = command:sub(1, #command - 1)
+    elseif keyName == keys.enter then
+      rednet.send(tutel, command)
+    else
+      local command = command .. keyName
+    end
+  end
+end
+
+while true do
+  local command = read()
+  rednet.send(tutel, command)
+end
